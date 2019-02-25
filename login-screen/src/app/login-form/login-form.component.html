@@ -1,0 +1,16 @@
+<form  *ngIf="!loggedin">
+    <div class="input">
+      <label>Username:</label>
+      <input (blur)="getLoginUser($event)" type="text">
+    </div>
+    <div class="input">
+      <label>Password:</label>
+      <input type="password" (blur)="getLoginPwd($event)">
+    </div>
+    <button class="input" (click)="loginUser($event)"><label>Login</label>
+    </button>
+    <div class="errorContainer">{{welcomeText}}</div>    
+  </form>
+  <div *ngIf="loggedin" class="afterLogin">
+    <div class="messageContainer">{{welcomeText}}&nbsp;{{participantName}}</div>
+  </div>
